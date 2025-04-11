@@ -1,6 +1,6 @@
 package com.example.domain.modules
 
-import kotlinx.serialization.Serializable
+
 
 data class Character(
     val id: Int,
