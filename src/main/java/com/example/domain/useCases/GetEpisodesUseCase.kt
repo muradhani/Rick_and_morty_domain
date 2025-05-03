@@ -7,6 +7,8 @@ class GetEpisodesUseCase(
     private val repository: EpisodesRepository
 ) {
     suspend operator fun invoke(ids: String): List<Episode> {
-        return repository.getEpisodes(ids)
+        return repository.getEpisodes(ids).onEach {
+            it.episodeNumber = it.episodeNumber.trimStart('0')
+        }
     }
 }
